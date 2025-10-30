@@ -1,0 +1,93 @@
+<% layout('layouts/boilerplate') %>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Listing</title>
+  <style>
+    .new-container {
+      margin-top: 20px;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form {
+      max-width: 600px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+ <div class="new-container"> <h1>Create a New Listing</h1>
+  <form action="/listings" method="POST" class="new-form needs-validation" novalidate enctype="multipart/form-data">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" class="form-control" name="title" required>
+    <div class="invalid-feedback">Please provide a title.</div>
+    <br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" class="form-control" required></textarea>
+    <div class="invalid-feedback">Please provide a description.</div>
+    <br>
+
+    <label for="image">Upload Listing Image:</label><br>
+    <input type="file" id="image" class="form-control" name="image" required>
+    <div class="invalid-feedback">Please provide a valid image.</div>
+    <br>
+
+    <label for="price">Price (USD):</label><br>
+    <input type="number" id="price" class="form-control" name="price" required>
+    <div class="invalid-feedback">Please provide a price.</div>
+    <br>
+
+    <label for="category">Category:</label><br>
+    <select id="category" class="form-control" name="category" required>
+      <option value="">Select a category</option>
+      <option value="Beach">Beach</option>
+      <option value="Mountain">Mountain</option>
+      <option value="Iconic Cities">Iconic Cities</option>
+      <option value="Castles">Castles</option>
+      <option value="Nature">Nature</option>
+      <option value="Forest">Forest</option>
+      <option value="Amazing Pools">Amazing Pools</option>
+      <option value="Rooms">Rooms</option>
+    </select>
+    <div class="invalid-feedback">Please select a category.</div>
+    <br>
+
+    <label for="location">Location:</label><br>
+    <input type="text" id="location" class="form-control" name="location" required>
+    <div class="invalid-feedback">Please provide a location.</div>
+    <br>
+
+    <label for="country">Country:</label><br>
+    <input type="text" id="country" class="form-control" name="country" required>
+    <div class="invalid-feedback">Please provide a country.</div>
+    <br>
+
+    <button type="submit">Create Listing</button>
+  </form>
+</div>
+</body>
